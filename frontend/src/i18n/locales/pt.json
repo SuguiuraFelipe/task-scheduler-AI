@@ -52,6 +52,7 @@
     "createTask": "Criar Tarefa",
     "createError": "Erro ao criar tarefa",
     "deleteError": "Erro ao remover tarefa",
+    "completeError": "Erro ao concluir tarefa",
     "userRequired": "Utilizador é necessário",
     "historyStep": "— 00 —",
     "historyHeading": "Histórico das Tarefas",
@@ -71,7 +72,9 @@
     "overdue": "Atrasada",
     "dueOn": "Vence:",
     "remove": "Remover",
-    "removing": "A remover"
+    "removing": "A remover",
+    "complete": "Concluído",
+    "completing": "A concluir"
   },
   "ai": {
     "terminalTitle": "AI Terminal",

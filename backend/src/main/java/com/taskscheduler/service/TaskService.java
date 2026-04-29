@@ -103,12 +103,13 @@ public class TaskService {
     }
 
     @Transactional
-    public void updateTaskStatus(Long taskId, Task.TaskStatus status) {
+    public TaskDTO updateTaskStatus(Long taskId, Task.TaskStatus status) {
         Task task = taskRepository.findById(taskId)
                 .orElseThrow(() -> new RuntimeException("Tarefa não encontrada: " + taskId));
         task.setStatus(status);
         task.setUpdatedAt(LocalDateTime.now());
-        taskRepository.save(task);
+        Task updated = taskRepository.save(task);
+        return TaskDTO.fromEntity(updated);
     }
 
     @Transactional

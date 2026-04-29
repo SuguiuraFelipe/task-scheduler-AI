@@ -21,6 +21,10 @@ export const taskService = {
     return api.put(`/tasks/${taskId}`, taskData);
   },
 
+  completeTask: (taskId) => {
+    return api.patch(`/tasks/${taskId}/complete`);
+  },
+
   deleteTask: (taskId) => {
     return api.delete(`/tasks/${taskId}`);
   },

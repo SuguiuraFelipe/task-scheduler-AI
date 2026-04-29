@@ -3,6 +3,7 @@ package com.taskscheduler.controller;
 import com.taskscheduler.dto.CreateTaskRequest;
 import com.taskscheduler.dto.CreateTaskFromPromptRequest;
 import com.taskscheduler.dto.TaskDTO;
+import com.taskscheduler.entity.Task;
 import com.taskscheduler.entity.User;
 import com.taskscheduler.repository.UserRepository;
 import com.taskscheduler.service.TaskService;
@@ -52,6 +53,12 @@ public class TaskController {
             @PathVariable Long id,
             @Valid @RequestBody CreateTaskRequest request) {
         TaskDTO task = taskService.updateTask(id, request);
+        return ResponseEntity.ok(task);
+    }
+
+    @PatchMapping("/{id}/complete")
+    public ResponseEntity<TaskDTO> completeTask(@PathVariable Long id) {
+        TaskDTO task = taskService.updateTaskStatus(id, Task.TaskStatus.COMPLETED);
         return ResponseEntity.ok(task);
     }
 

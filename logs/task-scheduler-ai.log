@@ -5112,3 +5112,100 @@ Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "
 2026-04-29T17:13:28.992+01:00  INFO 72880 --- [task-scheduler-ai] [http-nio-8080-exec-10] com.taskscheduler.service.TaskService    : Tarefa criada com id: 17 para utilizador: felipesuguiura97@gmail.com
 2026-04-29T17:13:28.992+01:00  INFO 72880 --- [task-scheduler-ai] [http-nio-8080-exec-10] com.taskscheduler.service.TaskService    : A enviar email de confirmação da tarefa 17 para felipesuguiura97@gmail.com
 2026-04-29T17:13:30.886+01:00  INFO 72880 --- [task-scheduler-ai] [http-nio-8080-exec-10] com.taskscheduler.service.EmailService   : Email de confirmação de criação enviado para: felipesuguiura97@gmail.com
+2026-04-29T19:27:28.129+01:00  INFO 80206 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : Starting TaskSchedulerApplication v1.0.0 using Java 21.0.8 with PID 80206 (/Users/felipesuguiura/Portifólio/TaskSchedulerAI/backend/target/task-scheduler-ai-1.0.0.jar started by felipesuguiura in /Users/felipesuguiura/Portifólio/TaskSchedulerAI)
+2026-04-29T19:27:28.130+01:00  INFO 80206 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-04-29T19:27:29.042+01:00  INFO 80206 --- [task-scheduler-ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-29T19:27:29.075+01:00  INFO 80206 --- [task-scheduler-ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 4 JPA repository interfaces.
+2026-04-29T19:27:29.542+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-29T19:27:29.550+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-29T19:27:29.550+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-04-29T19:27:29.569+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-29T19:27:29.569+01:00  INFO 80206 --- [task-scheduler-ai] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1399 ms
+2026-04-29T19:27:29.835+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-29T19:27:29.873+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-29T19:27:29.894+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-29T19:27:30.029+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-29T19:27:30.046+01:00  INFO 80206 --- [task-scheduler-ai] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-29T19:27:30.149+01:00  INFO 80206 --- [task-scheduler-ai] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@687e561b
+2026-04-29T19:27:30.150+01:00  INFO 80206 --- [task-scheduler-ai] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-29T19:27:30.197+01:00  WARN 80206 --- [task-scheduler-ai] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-29T19:27:30.885+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-29T19:27:30.985+01:00  INFO 80206 --- [task-scheduler-ai] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-29T19:27:31.338+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-29T19:27:32.095+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-04-29T19:27:32.160+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cdf6bb1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ea48ca1, org.springframework.security.web.context.SecurityContextHolderFilter@7c4a44bb, org.springframework.security.web.header.HeaderWriterFilter@17aa06eb, org.springframework.web.filter.CorsFilter@ceb4f91, org.springframework.security.web.authentication.logout.LogoutFilter@6f21c18f, com.taskscheduler.security.JwtAuthenticationFilter@698394bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@228f15de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1380a19b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52d04234, org.springframework.security.web.session.SessionManagementFilter@1c89cec5, org.springframework.security.web.access.ExceptionTranslationFilter@d05d8c3, org.springframework.security.web.access.intercept.AuthorizationFilter@7451338e]
+2026-04-29T19:27:32.522+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-04-29T19:27:32.531+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-04-29T19:27:32.532+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2026-04-29T19:27:32.532+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-04-29T19:27:32.532+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'TaskSchedulerQuartz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-04-29T19:27:32.532+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'TaskSchedulerQuartz' initialized from an externally provided properties instance.
+2026-04-29T19:27:32.532+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2026-04-29T19:27:32.533+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@78b9d614
+2026-04-29T19:27:32.644+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-04-29T19:27:32.647+01:00  INFO 80206 --- [task-scheduler-ai] [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2026-04-29T19:27:32.647+01:00  INFO 80206 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED started.
+2026-04-29T19:27:32.664+01:00  INFO 80206 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : Started TaskSchedulerApplication in 4.84 seconds (process running for 5.23)
+2026-04-29T19:27:42.917+01:00  INFO 80206 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-29T19:27:42.919+01:00  INFO 80206 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-29T19:27:42.927+01:00  INFO 80206 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2026-04-29T19:31:05.481+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED paused.
+2026-04-29T19:31:05.493+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2026-04-29T19:31:05.493+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED shutting down.
+2026-04-29T19:31:05.493+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED paused.
+2026-04-29T19:31:05.494+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED shutdown complete.
+2026-04-29T19:31:05.499+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-29T19:31:05.503+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-29T19:31:05.506+01:00  INFO 80206 --- [task-scheduler-ai] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-29T19:31:50.750+01:00  INFO 80506 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : Starting TaskSchedulerApplication v1.0.0 using Java 21.0.8 with PID 80506 (/Users/felipesuguiura/Portifólio/TaskSchedulerAI/backend/target/task-scheduler-ai-1.0.0.jar started by felipesuguiura in /Users/felipesuguiura/Portifólio/TaskSchedulerAI)
+2026-04-29T19:31:50.752+01:00  INFO 80506 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-04-29T19:31:51.749+01:00  INFO 80506 --- [task-scheduler-ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-29T19:31:51.787+01:00  INFO 80506 --- [task-scheduler-ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 4 JPA repository interfaces.
+2026-04-29T19:31:52.299+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-29T19:31:52.308+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-29T19:31:52.308+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-04-29T19:31:52.331+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-29T19:31:52.331+01:00  INFO 80506 --- [task-scheduler-ai] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1534 ms
+2026-04-29T19:31:52.537+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-29T19:31:52.581+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-29T19:31:52.604+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-29T19:31:52.759+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-29T19:31:52.777+01:00  INFO 80506 --- [task-scheduler-ai] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-29T19:31:52.876+01:00  INFO 80506 --- [task-scheduler-ai] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79273a4f
+2026-04-29T19:31:52.877+01:00  INFO 80506 --- [task-scheduler-ai] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-29T19:31:52.902+01:00  WARN 80506 --- [task-scheduler-ai] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-29T19:31:53.491+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-29T19:31:53.579+01:00  INFO 80506 --- [task-scheduler-ai] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-29T19:31:53.930+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-29T19:31:54.645+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-04-29T19:31:54.691+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54c3b0dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c40ae2d, org.springframework.security.web.context.SecurityContextHolderFilter@1502cd38, org.springframework.security.web.header.HeaderWriterFilter@189e986f, org.springframework.web.filter.CorsFilter@d0c3793, org.springframework.security.web.authentication.logout.LogoutFilter@35645453, com.taskscheduler.security.JwtAuthenticationFilter@2f16c21f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17aa06eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46c85b61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@283c6f00, org.springframework.security.web.session.SessionManagementFilter@344ab465, org.springframework.security.web.access.ExceptionTranslationFilter@6846e4e8, org.springframework.security.web.access.intercept.AuthorizationFilter@330a6b76]
+2026-04-29T19:31:54.982+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-04-29T19:31:54.989+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-04-29T19:31:54.989+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2026-04-29T19:31:54.990+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-04-29T19:31:54.990+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'TaskSchedulerQuartz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-04-29T19:31:54.990+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'TaskSchedulerQuartz' initialized from an externally provided properties instance.
+2026-04-29T19:31:54.990+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2026-04-29T19:31:54.990+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@52b7d2d3
+2026-04-29T19:31:55.055+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-04-29T19:31:55.055+01:00  INFO 80506 --- [task-scheduler-ai] [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2026-04-29T19:31:55.055+01:00  INFO 80506 --- [task-scheduler-ai] [main] org.quartz.core.QuartzScheduler          : Scheduler TaskSchedulerQuartz_$_NON_CLUSTERED started.
+2026-04-29T19:31:55.066+01:00  INFO 80506 --- [task-scheduler-ai] [main] c.t.TaskSchedulerApplication             : Started TaskSchedulerApplication in 4.708 seconds (process running for 5.153)
+2026-04-29T19:32:05.524+01:00  INFO 80506 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-29T19:32:05.524+01:00  INFO 80506 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-29T19:32:05.525+01:00  INFO 80506 --- [task-scheduler-ai] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-29T19:32:43.495+01:00  INFO 80506 --- [task-scheduler-ai] [http-nio-8080-exec-9] com.taskscheduler.service.TaskService    : Tarefa deletada com id: 16

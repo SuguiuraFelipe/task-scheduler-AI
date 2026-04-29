@@ -22,7 +22,13 @@ const STATUS_BADGE = {
   CANCELLED:   'badge badge--cancelled',
 };
 
-export default function TaskItem({ task, onDelete, deleting = false }) {
+export default function TaskItem({
+  task,
+  onDelete,
+  onComplete,
+  deleting = false,
+  completing = false,
+}) {
   const { t, i18n } = useTranslation();
   const priorityLabel = {
     URGENT: t('task.urgent'),
@@ -46,9 +52,10 @@ export default function TaskItem({ task, onDelete, deleting = false }) {
 
   const isOverdue =
     new Date(task.dueDate) < new Date() && task.status !== 'COMPLETED';
+  const isCompleted = task.status === 'COMPLETED';
 
   return (
-    <div className={`task-card ${isOverdue ? 'task-card--overdue' : ''}`}>
+    <div className={`task-card ${isOverdue ? 'task-card--overdue' : ''} ${isCompleted ? 'task-card--completed' : ''}`}>
       {/* Left priority signal bar */}
       <div className={PRIORITY_BAR[task.priority] || 'task-priority-bar'} />
 
@@ -91,6 +98,19 @@ export default function TaskItem({ task, onDelete, deleting = false }) {
           aria-label={`${t('task.remove')} ${task.title}`}
         >
           {deleting ? t('task.removing') : t('task.remove')}
+        </button>
+        <button
+          type="button"
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            onComplete(task.id);
+          }}
+          className="btn btn-complete"
+          disabled={completing || isCompleted}
+          aria-label={`${t('task.complete')} ${task.title}`}
+        >
+          {completing ? t('task.completing') : t('task.complete')}
         </button>
       </div>
     </div>

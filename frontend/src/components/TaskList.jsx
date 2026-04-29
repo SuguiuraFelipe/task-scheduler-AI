@@ -8,6 +8,7 @@ export default function TaskList({ userId, onRefresh }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [deletingTaskId, setDeletingTaskId] = useState(null);
+  const [completingTaskId, setCompletingTaskId] = useState(null);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -42,6 +43,24 @@ export default function TaskList({ userId, onRefresh }) {
       console.error('Erro ao deletar tarefa:', err);
     } finally {
       setDeletingTaskId(null);
+    }
+  };
+
+  const handleComplete = async (taskId) => {
+    if (completingTaskId === taskId) return;
+    setCompletingTaskId(taskId);
+    setError(null);
+
+    try {
+      const response = await taskService.completeTask(taskId);
+      setTasks((prev) =>
+        prev.map((task) => (task.id === taskId ? response.data : task))
+      );
+    } catch (err) {
+      setError(t('task.completeError'));
+      console.error('Erro ao concluir tarefa:', err);
+    } finally {
+      setCompletingTaskId(null);
     }
   };
 
@@ -105,7 +124,9 @@ export default function TaskList({ userId, onRefresh }) {
               <TaskItem
                 task={task}
                 onDelete={handleDelete}
+                onComplete={handleComplete}
                 deleting={deletingTaskId === task.id}
+                completing={completingTaskId === task.id}
               />
             </div>
           ))}

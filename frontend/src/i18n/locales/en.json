@@ -52,6 +52,7 @@
     "createTask": "Create Task",
     "createError": "Error creating task",
     "deleteError": "Error removing task",
+    "completeError": "Error completing task",
     "userRequired": "User is required",
     "historyStep": "— 00 —",
     "historyHeading": "Task History",
@@ -71,7 +72,9 @@
     "overdue": "Overdue",
     "dueOn": "Due:",
     "remove": "Remove",
-    "removing": "Removing"
+    "removing": "Removing",
+    "complete": "Completed",
+    "completing": "Completing"
   },
   "ai": {
     "terminalTitle": "AI Terminal",

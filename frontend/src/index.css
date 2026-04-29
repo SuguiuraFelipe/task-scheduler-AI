@@ -272,6 +272,15 @@ input, textarea, select, button {
   border-color: rgba(204, 51, 51, 0.55);
 }
 
+.task-card--completed {
+  border-color: rgba(23,169,110,0.38);
+  background: linear-gradient(90deg, rgba(23,169,110,0.08), var(--bg-2) 36%);
+}
+
+.task-card--completed:hover {
+  border-color: rgba(23,169,110,0.62);
+}
+
 .task-priority-bar {
   width: 3px;
   flex-shrink: 0;
@@ -305,6 +314,19 @@ input, textarea, select, button {
   text-overflow: ellipsis;
 }
 
+.task-card--completed .task-title,
+.task-card--completed .task-description {
+  color: var(--success);
+  text-decoration-line: line-through underline;
+  text-decoration-color: var(--success);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.task-card--completed .task-description {
+  opacity: 0.82;
+}
+
 .task-description {
   font-size: 11px;
   color: var(--text-2);
@@ -333,7 +355,9 @@ input, textarea, select, button {
 .task-actions {
   padding: 14px 14px 14px 0;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 6px;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
@@ -484,6 +508,19 @@ input[type="datetime-local"].field-input {
   color: var(--danger);
   border-color: rgba(204,51,51,0.35);
   background: rgba(204,51,51,0.06);
+}
+
+.btn-complete {
+  background: transparent;
+  color: var(--success);
+  border: 1px solid transparent;
+  font-size: 9px;
+  padding: 4px 8px;
+}
+
+.btn-complete:hover:not(:disabled) {
+  border-color: rgba(23,169,110,0.35);
+  background: rgba(23,169,110,0.08);
 }
 
 /* ─── ALERT / ERROR ─────────────────────────────────── */
