@@ -1,0 +1,167 @@
+╔═══════════════════════════════════════════════════════════════╗
+║        🚀 TASK SCHEDULER AI - GUIA DE EXECUÇÃO                ║
+╚═══════════════════════════════════════════════════════════════╝
+
+⏱️  Tempo total: 5 minutos
+
+═══════════════════════════════════════════════════════════════════
+
+PASSO 1: PREPARAÇÃO (Execute UMA VEZ)
+─────────────────────────────────────────────────────────────────
+
+cd /Users/felipesuguiura/Portifólio/TaskSchedulerAI
+bash run.sh
+
+Isso vai:
+  ✅ Levantar PostgreSQL via Docker
+  ✅ Compilar o Backend (Maven)
+  ✅ Instalar dependências Frontend (npm)
+
+═══════════════════════════════════════════════════════════════════
+
+PASSO 2: ABRA 3 TERMINAIS (Terminal 1, 2, 3)
+─────────────────────────────────────────────────────────────────
+
+TERMINAL 1 (Verificar banco de dados):
+─────────────────────────────────────
+cd /Users/felipesuguiura/Portifólio/TaskSchedulerAI
+docker-compose ps
+
+Deve mostrar: taskscheduler-postgres ... (healthy)
+
+
+TERMINAL 2 (Backend - Spring Boot):
+────────────────────────────────────
+cd /Users/felipesuguiura/Portifólio/TaskSchedulerAI/backend
+java -jar target/task-scheduler-ai-1.0.0.jar
+
+Aguarde até ver:
+  "Started TaskSchedulerApplication in X seconds"
+  "Demo user created with ID: 1"
+
+
+TERMINAL 3 (Frontend - React + Vite):
+──────────────────────────────────────
+cd /Users/felipesuguiura/Portifólio/TaskSchedulerAI/frontend
+npm run dev
+
+Aguarde até ver:
+  "Local:   http://localhost:5173/"
+
+═══════════════════════════════════════════════════════════════════
+
+PASSO 3: TESTAR NO NAVEGADOR
+─────────────────────────────────────────────────────────────────
+
+👉 Abra: http://localhost:5173
+
+Você vai ver:
+  ✅ Dashboard com formulário de tarefas
+  ✅ Assistente IA
+  ✅ Lista de tarefas (vazia no início)
+  ✅ Link para histórico de conversas
+
+═══════════════════════════════════════════════════════════════════
+
+PASSO 4: TESTAR FUNCIONALIDADES
+─────────────────────────────────────────────────────────────────
+
+1️⃣  CRIAR TAREFA (Modo Manual):
+   - Preencha: Título, Descrição, Data/Hora, Prioridade
+   - Clique em "Criar Tarefa"
+   - Veja a tarefa aparecer na lista abaixo
+
+2️⃣  TESTAR IA (Assistente Claude):
+   - Digite: "Preciso estudar Spring Boot amanhã às 19h com urgência"
+   - Clique em "Sugerir Tarefa"
+   - Claude vai estruturar a tarefa automaticamente
+   - Clique em "Criar Tarefa" para aceitar
+
+3️⃣  VER HISTÓRICO DE CONVERSAS:
+   - Clique em "Conversas" na barra de navegação
+   - Veja o histórico de interações com IA
+
+4️⃣  TESTAR API (Swagger):
+   - Acesse: http://localhost:8080/swagger-ui.html
+   - Veja todos os endpoints documentados
+   - Teste com "Try it out"
+
+═══════════════════════════════════════════════════════════════════
+
+PASSO 5: PARAR TUDO (Quando terminar)
+─────────────────────────────────────────────────────────────────
+
+docker-compose down      # Para o banco
+Ctrl+C (Terminal 2)      # Para o backend
+Ctrl+C (Terminal 3)      # Para o frontend
+
+═══════════════════════════════════════════════════════════════════
+
+📋 ENDPOINTS PRINCIPAIS
+─────────────────────────────────────────────────────────────────
+
+GET    /api/tasks?userId=1              → Lista tarefas
+POST   /api/tasks?userId=1              → Criar tarefa
+DELETE /api/tasks/{id}                  → Deletar tarefa
+
+POST   /api/conversations/suggest-task  → Sugestão IA
+GET    /api/conversations?userId=1      → Histórico IA
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 O QUE TESTAR NA ENTREVISTA
+─────────────────────────────────────────────────────────────────
+
+✅ CRUD de Tarefas
+   - Criar, listar, deletar
+   - Validações funcionam
+
+✅ Integração Claude AI
+   - Descrever em linguagem natural
+   - Claude estrutura a tarefa
+
+✅ Histórico de Conversas
+   - Cada conversa é salva no banco
+
+✅ API Documentada
+   - Swagger UI mostra todos endpoints
+
+✅ Tech Stack Profissional
+   - Spring Boot 3, React 18
+   - PostgreSQL, Quartz, Claude API
+
+═══════════════════════════════════════════════════════════════════
+
+❓ PROBLEMAS?
+─────────────────────────────────────────────────────────────────
+
+Porta em uso:
+  lsof -i :5173  (Frontend)
+  lsof -i :8080  (Backend)
+  lsof -i :5432  (Database)
+  kill -9 <PID>
+
+Database não existe:
+  docker exec taskscheduler-postgres psql -U postgres \
+    -c "CREATE DATABASE taskscheduler;"
+
+Build falhou:
+  cd backend && mvn clean install -DskipTests
+
+Dependencies corrompidos:
+  cd frontend && rm -rf node_modules && npm install
+
+═══════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTAÇÃO COMPLETA
+─────────────────────────────────────────────────────────────────
+
+Ver mais detalhes em:
+  QUICKSTART.md  ← Guia extenso com exemplos cURL
+  README.md      ← Documentação completa do projeto
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 Bora testar! Boa sorte na entrevista!
+
+═══════════════════════════════════════════════════════════════════
